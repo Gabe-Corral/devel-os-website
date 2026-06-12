@@ -1,8 +1,6 @@
 import Nav from "@/components/nav";
 import Image from "next/image";
 
-import develosPreview from "@/images/develos_2.png";
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col text-[#f8f8f2]">
@@ -47,8 +45,10 @@ export default function Home() {
 
           <div className="w-full overflow-hidden rounded-3xl border border-[#44475a] bg-[#1f212b] p-3 shadow-2xl shadow-black/30">
             <Image
-              src={develosPreview}
+              src="/images/develos_2.png"
               alt="DevelOS package workflow preview"
+              width={1919}
+              height={1080}
               className="h-auto w-full rounded-2xl"
               priority
             />
