@@ -89,12 +89,12 @@ export default function Home() {
             Demo (alpha version)
           </h2>
           <div className="aspect-video overflow-hidden rounded-3xl border border-[#44475a] bg-[#1f212b] p-3 shadow-2xl shadow-black/30">
-            <iframe
+            <video
               className="h-full w-full rounded-2xl"
-              src="https://www.youtube.com/embed/WiJxUT46-Mc"
+              src="/develos-demo.mp4"
               title="DevelOS demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
+              controls
+              playsInline
             />
           </div>
         </div>
