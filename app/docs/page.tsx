@@ -12,6 +12,16 @@ const docs = [
     body: "Build packages, build the ISO, and test with QEMU.",
   },
   {
+    title: "Networking",
+    href: "/docs/networking",
+    body: "Connect with NetworkManager and nmcli.",
+  },
+  {
+    title: "Testing",
+    href: "/docs/testing",
+    body: "Run local live ISO smoke tests.",
+  },
+  {
     title: "Suckless Patches",
     href: "/docs/suckless-patches",
     body: "Details and information about Suckless patches and modifications.",
