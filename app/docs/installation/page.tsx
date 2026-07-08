@@ -75,6 +75,8 @@ export default function InstallationDocs() {
               Reboot into the installed system. GRUB should boot DevelOS, Ly
               should start on <code>tty1</code>, the configured user should be able
               to log in, and the <code>dwm</code> session should launch from Ly.
+              Networking is managed by NetworkManager. See <a href="/docs/networking" className="font-bold text-[#8be9fd] hover:underline">Networking</a>{" "}
+              for <code>nmcli</code> Wi-Fi commands.
             </p>
             <p className="mt-4 text-[#c7c9d3]">If Ly does not start, check:</p>
             <pre className="mt-4 overflow-x-auto rounded-xl bg-[#1f212b] p-4 text-sm text-[#f8f8f2]"><code>{`systemctl status ly@tty1.service

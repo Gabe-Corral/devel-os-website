@@ -81,6 +81,9 @@ export default function BuildDocs() {
               is used. This only tests whether the ISO boots. It does not test
               installation.
             </p>
+            <p className="mt-4 text-[#c7c9d3]">
+              For the non-interactive smoke test, see <a href="/docs/testing" className="font-bold text-[#8be9fd] hover:underline">Testing</a>.
+            </p>
           </section>
 
           <section className="rounded-2xl border border-[#44475a] bg-[#343746] p-6">
@@ -104,6 +107,7 @@ export default function BuildDocs() {
               <li><code>scripts/build-packages.sh</code>: local package build pipeline.</li>
               <li><code>scripts/build-repo.sh</code>: local pacman repo creation.</li>
               <li><code>scripts/common.sh</code>: shared shell helpers.</li>
+              <li><code>scripts/test-live.sh</code>: live ISO smoke test runner.</li>
               <li><code>archiso/packages.live.x86_64</code>: packages included in the live ISO.</li>
               <li><code>archiso/packages.installed.x86_64</code>: packages installed onto target systems.</li>
               <li><code>packages/</code>: DevelOS PKGBUILDs and package-owned files.</li>
