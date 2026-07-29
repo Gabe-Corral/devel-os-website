@@ -32,6 +32,22 @@ export default function SucklessPatchesDocs() {
               <li><code>awesomebar</code>: adds a taskbar-style window list, hidden windows, clickable titles, hidden-client navigation, and show/hide helpers.</li>
               <li><code>fullgaps</code>: adds configurable gaps between tiled clients and outer monitor edges.</li>
             </ul>
+            <h3 className="mt-6 mb-3 text-lg font-bold">Window Titlebars (custom)</h3>
+            <p className="mb-3 text-[#c7c9d3]">
+              Not based on an upstream patch; implemented directly in the vendored source.
+            </p>
+            <ul className="list-disc space-y-2 pl-5 text-[#c7c9d3]">
+              <li>Every managed window gets a titlebar above its content: window title on the left, minimize/maximize/close buttons on the right (Nerd Font glyphs).</li>
+              <li>The titlebar is an override-redirect child of the root window. Layouts compute slot geometry (titlebar band plus content) unchanged; only <code>resizeclient()</code> and <code>configure()</code> translate it into real window geometry.</li>
+              <li>One continuous border frames titlebar and content, with no border line separating them.</li>
+              <li>Buttons act on release, and only when press and release land on the same button.</li>
+              <li>Dragging the titlebar moves the window: tiled windows auto-float, and dragging a maximized window restores it first, then moves it.</li>
+              <li>Minimize iconifies the window and integrates with <code>awesomebar</code>: hidden windows keep a <code>SchemeHid</code> tab in the bar that restores them on click.</li>
+              <li>Maximize toggles between filling the monitor work area and restoring the previous geometry and tiling state; the glyph switches to a restore icon while maximized.</li>
+              <li>Close sends <code>WM_DELETE</code>, falling back to <code>XKillClient</code>.</li>
+              <li>Fullscreen windows hide the titlebar; it reappears when fullscreen is left.</li>
+              <li>Configurable through <code>showwinbuttons</code>, <code>btnright</code>, <code>btnoffset</code>, and <code>btnsyms[]</code> in <code>config.def.h</code>.</li>
+            </ul>
             <h3 className="mt-6 mb-3 text-lg font-bold">Configuration Changes</h3>
             <ul className="list-disc space-y-2 pl-5 text-[#c7c9d3]">
               <li>Font changed to <code>JetBrainsMono Nerd Font:size=11</code>.</li>
@@ -42,6 +58,8 @@ export default function SucklessPatchesDocs() {
               <li><code>Mod-Shift-j</code> and <code>Mod-Shift-k</code> include hidden clients.</li>
               <li><code>Mod-s</code> shows the selected hidden client and <code>Mod-Shift-s</code> shows all hidden clients on the current tag.</li>
               <li>Tiled windows use <code>5px</code> full gaps, controlled with <code>Mod-minus</code>, <code>Mod-equal</code>, and <code>Mod-Shift-equal</code>.</li>
+              <li>Windows have titlebars with minimize, maximize, and close buttons and drag-to-move; see Window Titlebars above.</li>
+              <li>The bar is placed at the bottom of the screen through <code>topbar = 0</code>.</li>
             </ul>
           </section>
 
